@@ -1,0 +1,85 @@
+<div class="container-fluid">
+<center ng-controller="parcelController" ng-init="init()">
+<div class="page-header"><h1>Parcel Information</h1></div>
+<br>
+<div class="row">
+	<div layout="row" layout-sm="column" layout-align="space-around">
+		<md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-8">
+		<img class="img-responsive" ng-src="{{streetViewSRC}}" id="street-view">
+	</div>
+	<div ng-cloak class="col-md-4">
+		<div class="table-responsive">
+		  <table class="table table-condensed table-hover">
+			 <tbody>
+			 	<tr>
+			 		<th>Owner Name</th>
+			 		<td>{{parcel.OwnerName}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Address</th>
+			 		<td>{{parcel.Address}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Borough</th>
+			 		<td>{{parcel.Borough}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Zipcode</th>
+			 		<td>{{parcel.ZipCode}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Block</th>
+			 		<td>{{parcel.Block}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Lot</th>
+			 		<td>{{parcel.Lot}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>BBL</th>
+			 		<td>{{parcel.BBL}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>School District</th>
+			 		<td>{{parcel.SchoolDist}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Council</th>
+			 		<td>{{parcel.Council}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Police Precinct</th>
+			 		<td>{{parcel.PolicePrct}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Health Area</th>
+			 		<td>{{parcel.HealthArea}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Sanitation District</th>
+			 		<td>{{parcel.SanitDistrict}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Lot Area</th>
+			 		<td>{{parcel.LotArea}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Number of Buildings</th>
+			 		<td>{{parcel.NumBldgs}}</td>
+			 	</tr>
+			 	<tr>
+			 		<th>Number of Floors</th>
+			 		<td>{{parcel.NumFloors}}</td>
+			 	</tr>
+			 </tbody>
+		  </table>
+		</div>
+	</div>
+</div>
+</center>
+</div>

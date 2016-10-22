@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="/">
+
+	<meta charset="utf-8">
+	<meta https-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="NYC Parcels">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="fragment" content="!"> 
+
+	<title>NYC Parcels</title>
+	
+	<!-- Bootstrap -->
+	
+	<!-- Latest compiled and minified JavaScript -->
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Angular Material requires Angular.js Libraries -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js" type="text/javascript"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js" type="text/javascript"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js" type="text/javascript"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js" type="text/javascript"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js" type="text/javascript"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.min.js"></script>
+
+	<script type="text/javascript" src="javascripts/google-analytics.js"></script>
+
+	<script src="components/index/indexController.js" type="text/javascript"></script>
+	<script src="components/boroughList/boroughListController.js" type="text/javascript"></script>
+	<script src="components/about/aboutController.js" type="text/javascript"></script>
+	<script src="components/contact/contactController.js" type="text/javascript"></script>
+	<script src="components/nycSearch/nycSearchController.js" type="text/javascript"></script>
+	<script src="components/boroughSearch/boroughSearchController.js" type="text/javascript"></script>
+	<script src="components/searchResults/searchResultsController.js" type="text/javascript"></script>
+	<script src="components/parcel/parcelController.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="components/index/index.css" />
+    <link rel="stylesheet" type="text/css" href="components/boroughList/boroughList.css" />
+    <link rel="stylesheet" type="text/css" href="components/about/about.css" />
+    <link rel="stylesheet" type="text/css" href="components/contact/contact.css" />
+    <link rel="stylesheet" type="text/css" href="components/nycSearch/nycSearch.css" />
+    <link rel="stylesheet" type="text/css" href="components/boroughSearch/boroughSearch.css" />
+    <link rel="stylesheet" type="text/css" href="components/searchResults/searchResults.css" />
+    <link rel="stylesheet" type="text/css" href="components/parcel/parcel.css" />
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700' />
+</head>
+	<body ng-cloak ng-app="nycParcels" ng-controller="indexController">
+
+		<!-- Container #1 (see wireframe) -->
+		<md-toolbar layout="row" class="md-toolbar-tools">
+		  <md-button class="menu md-icon-button" hide-gt-sm ng-click="toggleList()" aria-label="Show Items List">
+		    <md-icon md-svg-icon="menu" ></md-icon>
+		  </md-button>
+		  <h1 ng-click="redirectHome()">NYC Parcels</h1>
+		</md-toolbar>
+
+		<!-- Container #2 -->
+		<div flex layout="row">
+
+		  <!-- Container #3 -->
+			<md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
+			          md-component-id="left" ng-click="toggleList()">
+				<div ng-include="'components/boroughList/boroughList.html'" ng-controller="boroughListController"></div>
+			</md-sidenav>
+
+		  <div flex ng-view autoscroll="true" style="background-image: url({{ bgimg }});" class="responsive-scale"></div>
+
+		</div>
+
+	<!-- additional script tags here -->
+	</body>
+</html>

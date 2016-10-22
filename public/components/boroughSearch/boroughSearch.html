@@ -1,0 +1,46 @@
+<md-card class="card">
+<center ng-controller="boroughSearchController">
+<div class="page-header">
+	<h1>Search for parcels in <span id="borough">{{borough}}</span></h1>
+	<h4>Only <span id="borough">1</span> field is required for a search.</h4>
+</div>
+<br>
+<div layout="row" layout-sm="column" layout-align="space-around">
+	<md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+</div>
+<br>
+<form name="searchForm" ng-submit="query(searchForm.$valid)" novalidate>
+    <div class="form-group">
+		<label class="mid">Address:</label>
+		<input type="text" name="Address" ng-model="search.Address" autocomplete="off" class="form-control input-lg"/>
+	</div>
+	<br>
+    <div class="form-group">
+		<label class="mid">Zipcode:</label>
+		<input type="number" name="ZipCode" ng-model="search.ZipCode" ng-minlength="5" ng-maxlength="5" ng-pattern="/^\d+$/" autocomplete="off" class="form-control input-lg"/>
+		<div ng-messages="searchForm.ZipCode.$error" ng-show="searchForm.ZipCode.$dirty" class="error">
+			<div ng-message="minlength">Too short.</div>
+			<div ng-message="maxlength">Too long.</div>
+			<div ng-message="pattern">Not a valid zipcode.</div>
+			<div ng-message="number">Not a valid zipcode.</div>
+		</div>
+	</div>
+	<br>
+    <div class="form-group">
+		<label class="mid">Owner Name:</label>
+		<input type="text" name="OwnerName" ng-model="search.OwnerName" autocomplete="off" class="form-control input-lg"/>
+	</div>
+	<br>
+	<md-button type="submit" class="md-raised md-primary" ng-disabled="searchForm.$invalid">Search</md-button>
+	<br>
+	<br>
+	<div ng-messages="messages" class="error big">
+          <div ng-message="error">No input was entered.</div>
+          <div ng-message="empty">No parcels were found that match your input.</div>
+          <div ng-message="serverError">The server is down.  Try again later.</div>
+    </div>
+</form>
+<br>
+<br>
+</center>	
+</md-card>

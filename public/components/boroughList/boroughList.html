@@ -1,0 +1,6 @@
+<md-list ng-repeat="item in items | orderBy: 'num'">
+	<md-button ng-click="selectItem(item)" ng-class="{ 'selected' : item === selected }" class="md-primary" aria-label="item.name">
+	<md-icon md-svg-icon="{{item.avatar}}" class="avatar"></md-icon>
+      {{item.name}}
+	</md-button>
+</md-list>

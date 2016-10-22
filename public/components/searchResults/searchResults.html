@@ -1,0 +1,29 @@
+<center ng-controller="searchResultsController">
+<div class="page-header" ng-cloak><h1>{{parcels.length}} Seach Results</h1></div>
+<h4 class="page-header">Click a parcel for more information</h4>
+<br>
+<ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="3" class="pagination-lg" boundary-links="true" boundary-link-numbers="true" items-per-page="maxSize" rotate="false"></ul>
+<div class="table-responsive">
+  <table class="table table-condensed table-hover">
+  	<thead>
+    	<tr>
+      		<th>#</th>
+      		<th>Year Built</th>
+      		<th>Address</th>
+      		<th>Zipcode</th>
+      		<th>Owner Name</th>
+    	</tr>
+  	</thead>
+  	<tbody>
+	  	<tr ng-repeat="parcel in parcels.slice(((currentPage-1)*maxSize), ((currentPage)*maxSize))" ng-click="selectParcel(parcel)">
+	      	<th scope="row">{{((currentPage-1)*maxSize)+($index + 1)}}</th>
+	      	<td>{{parcel.YearBuilt}}</td>
+	      	<td>{{parcel.Address}}</td>
+	      	<td>{{parcel.ZipCode}}</td>
+	      	<td>{{parcel.OwnerName}}</td>
+	    </tr>
+	  </tbody>	
+  </table>
+</div>
+<ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="3" class="pagination-lg" boundary-links="true" boundary-link-numbers="true" items-per-page="maxSize" rotate="false"></ul>
+</center>

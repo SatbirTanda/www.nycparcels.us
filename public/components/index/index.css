@@ -1,0 +1,8 @@
+.page-header { color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+.responsive-scale {
+	width:100%;
+	padding-bottom: 66.666666666667%; /* 960px/1440px */
+	background-size:cover;
+	background-position:center; /* IE fix */
+}
